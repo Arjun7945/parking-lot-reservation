@@ -84,17 +84,19 @@ A smart parking facility with multiple floors, each containing multiple parking 
 - **Global Exception Handling** (`@ControllerAdvice`)
 ---
 
-## Issues and Contributions
+# Issues and Contributions
 
-# Issues Created and Resolved
+## Issues Created and Resolved
 
 As part of the development process, the following issues were created and successfully resolved:
 
-| Issues                                      | Status  | Description                                             |
-|----------------------------------------------|---------|---------------------------------------------------------|
-| Parking Lot Reservation Backend (Java + Spring Boot) | ✅ Completed | Implemented the core backend for the parking lot reservation system. |
-| Add JUnit Tests for Parking Lot Reservation API      | ✅ Completed | Added comprehensive JUnit tests to ensure 90%+ code coverage. |
-| SpringDoc Issue with /v3/api-docs                     | ✅ Completed | Resolved the issue faced while trying to use SpringDoc for API documentation. |
+<custom-element data-json="%7B%22type%22%3A%22table-metadata%22%2C%22attributes%22%3A%7B%22title%22%3A%22Issues%22%7D%7D" />
+
+| Issues                                      | Status  | Description                                             | Link                                                                                     |
+|----------------------------------------------|---------|---------------------------------------------------------|------------------------------------------------------------------------------------------|
+| Parking Lot Reservation Backend (Java + Spring Boot) | ✅ Completed | Implemented the core backend for the parking lot reservation system. | [#3](https://github.com/Arjun7945/parking-lot-reservation/issues/3)                     |
+| Add JUnit Tests for Parking Lot Reservation API      | ✅ Completed | Added comprehensive JUnit tests to ensure 90%+ code coverage. | [#2](https://github.com/Arjun7945/parking-lot-reservation/issues/2)                     |
+| SpringDoc Issue with /v3/api-docs                     | ✅ Completed | Resolved the issue faced while trying to use SpringDoc for API documentation. | [#1](https://github.com/Arjun7945/parking-lot-reservation/issues/1)                     |
 
 ---
 ## 📂 Project Structure
