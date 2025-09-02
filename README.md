@@ -1,13 +1,10 @@
 # Parking Lot Reservation System
-
 A **Spring Boot 3.x + MySQL** backend service for managing parking floors, slots, reservations, and availability.
 Designed with **clean architecture**, **validations**, **business rules**, and **extensibility** for future enhancements.
-
 ---
 
 ## Objective
 Design and implement a **Parking Lot Reservation backend** with **REST API**, using **Java + Spring Boot**. The API enables parking lot administrators to manage floors and slots, and customers to reserve slots for specific time ranges without conflicts.
-
 ---
 
 ## Guidelines
@@ -15,43 +12,45 @@ Design and implement a **Parking Lot Reservation backend** with **REST API**, us
 - Follow **best practices** in software design patterns.
 - Implement the solution efficiently within **five days**.
 - Write **unit test cases** with **90% to 100% code coverage**.
-
 ---
 
 ## Features
 A smart parking facility with multiple floors, each containing multiple parking slots. Customers can reserve slots for a specific period, with the system preventing double bookings and calculating parking fees based on duration.
 
 ### API Endpoints
+<custom-element data-json="%7B%22type%22%3A%22table-metadata%22%2C%22attributes%22%3A%7B%22title%22%3A%22API%20Endpoints%22%7D%7D" />
+
 | Endpoint                | Description                                                                 |
 |-------------------------|-----------------------------------------------------------------------------|
-| `POST /floors`          | Create a parking floor                                                      |
-| `POST /slots`           | Create parking slots for a floor                                            |
-| `POST /reserve`         | Reserve a slot for a given time range (with availability and cost checks) |
-| `GET /availability`     | List available slots for a given time range                                |
-| `GET /reservations/{id}`| Fetch reservation details                                                    |
-| `DELETE /reservations/{id}` | Cancel a reservation                                                    |
+| `POST http://localhost:8080/api/floors`          | Create a parking floor                                                      |
+| `POST http://localhost:8080/api/slots`           | Create parking slots for a floor                                            |
+| `POST http://localhost:8080/api/reservations`         | Reserve a slot for a given time range (with availability and cost checks) |
+| `GET http://localhost:8080/api/availability`     | List available slots for a given time range                                |
+| `GET http://localhost:8080/api/reservations/{id}`| Fetch reservation details                                                    |
+| `DELETE http://localhost:8080/api/reservations/{id}` | Cancel a reservation                                                    |
 
+### Additional API Endpoints
+<custom-element data-json="%7B%22type%22%3A%22table-metadata%22%2C%22attributes%22%3A%7B%22title%22%3A%22Additional%20API%20Endpoints%22%7D%7D" />
 
-### ADDITIONAL API Endpoints
 | Endpoint                | Description                                                                 |
 |-------------------------|-----------------------------------------------------------------------------|
-|`DELETE /api/reservations`| Delete all active/inactive reservations (for admin use)                    |
-| `Cost Calculation`           | Example 1: 4 wheeler for 2.5 hours
-Duration: 2.5 hours → Rounds up to 3 hours
+| `DELETE http://localhost:8080/api/reservations` | Delete all active/inactive reservations (for admin use)                  |
 
-Rate: ₹30 per hour
+### Cost Calculation Example
+**Example 1:** 4 wheeler for 2.5 hours
+- **Duration:** 2.5 hours → Rounds up to 3 hours
+- **Rate:** ₹30 per hour
+- **Total:** ₹90
 
-Total: ₹90
-
-Request Body:
-
-json
+**Request Body:**
+```json
 {
   "slotId": 1,
   "vehicleNumber": "KA01AB1234",
-  "startTime": "2024-09-02 14:00:00",
-  "endTime": "2024-09-02 16:30:00"
-}                                        |
+  "startTime": "2025-09-02 14:00:00",
+  "endTime": "2025-09-02 16:30:00"
+}
+```
 
 ### Business Rules
 - Start time must be **before** end time.
@@ -60,18 +59,18 @@ json
 - Partial hours are **rounded up** (e.g., 1.2 hours = 2 hours).
 
 ### Pricing
+<custom-element data-json="%7B%22type%22%3A%22table-metadata%22%2C%22attributes%22%3A%7B%22title%22%3A%22Pricing%22%7D%7D" />
+
 | Vehicle Type | Rate (per hour) |
 |--------------|-----------------|
 | 4 Wheeler    | Rs. 30          |
 | 2 Wheeler    | Rs. 20          |
-
 ---
 
 ## Bonus Features
 - **Optimistic locking** for concurrent booking protection.
 - **Pagination & sorting** for availability listing.
 - **API documentation** using **Swagger/OpenAPI**.
-
 ---
 
 ## Tech Stack
@@ -83,7 +82,6 @@ json
 - **JUnit & Mockito** (Testing)
 - **Swagger/OpenAPI** (API Documentation)
 - **Global Exception Handling** (`@ControllerAdvice`)
-
 ---
 
 ## 📂 Project Structure
@@ -175,6 +173,8 @@ parking_lot_reservation
 1. **Clone the repository:**
    ```bash
    git clone <repository-url>
+   git checkout parking-lot-reservation
+   git pull origin parking-lot-reservation
    cd parking_lot_reservation
    ```
 
@@ -190,7 +190,7 @@ parking_lot_reservation
 3. **Build and run:**
    ```bash
    mvn clean install
-   mvn spring-boot\:run
+   mvn spring-boot:run
    ```
 
 4. **Access the API:**
