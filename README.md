@@ -84,6 +84,19 @@ A smart parking facility with multiple floors, each containing multiple parking 
 - **Global Exception Handling** (`@ControllerAdvice`)
 ---
 
+## Issues and Contributions
+
+# Issues Created and Resolved
+
+As part of the development process, the following issues were created and successfully resolved:
+
+| Issues                                      | Status  | Description                                             |
+|----------------------------------------------|---------|---------------------------------------------------------|
+| Parking Lot Reservation Backend (Java + Spring Boot) | ✅ Completed | Implemented the core backend for the parking lot reservation system. |
+| Add JUnit Tests for Parking Lot Reservation API      | ✅ Completed | Added comprehensive JUnit tests to ensure 90%+ code coverage. |
+| SpringDoc Issue with /v3/api-docs                     | ✅ Completed | Resolved the issue faced while trying to use SpringDoc for API documentation. |
+
+---
 ## 📂 Project Structure
 ```bash
 parking_lot_reservation
