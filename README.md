@@ -92,7 +92,7 @@ As part of the development process, the following issues were created and succes
 
 <custom-element data-json="%7B%22type%22%3A%22table-metadata%22%2C%22attributes%22%3A%7B%22title%22%3A%22Issues%22%7D%7D" />
 
-| Issues                                      | Status  | Description                                             | Link                                                                                     |
+| Issues                                      | Status  | Description                                             | Issue Link                                                                                     |
 |----------------------------------------------|---------|---------------------------------------------------------|------------------------------------------------------------------------------------------|
 | Parking Lot Reservation Backend (Java + Spring Boot) | ✅ Completed | Implemented the core backend for the parking lot reservation system. | [#3](https://github.com/Arjun7945/parking-lot-reservation/issues/3)                     |
 | Add JUnit Tests for Parking Lot Reservation API      | ✅ Completed | Added comprehensive JUnit tests to ensure 90%+ code coverage. | [#2](https://github.com/Arjun7945/parking-lot-reservation/issues/2)                     |
