@@ -2,23 +2,21 @@ package com.testproject.parking_lot_reservation.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
 @Entity
 @Table(name = "vehicle_types")
-public class VehicleType {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(nullable = false, unique = true)
-    private String typeName;
-
+@Getter
+@Setter
+public class VehicleType extends BaseEntity {
+    @Column(unique = true, nullable = false)
+    private String type;
+    
     @Column(nullable = false)
     private Double hourlyRate;
+    
+    @Column(nullable = false)
+    private String description;
 }

@@ -7,23 +7,19 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 @Data
-public class ReservationResponseDTO {
+public class SlotResponseDTO {
     private Long id;
-    private Long slotId;
     private String slotNumber;
+    private Long floorId;
     private Integer floorNumber;
-    private String vehicleNumber;
-    
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private LocalDateTime startTime;
-    
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private LocalDateTime endTime;
-    
-    private Double totalCost;
-    private Integer durationHours;
-    private Boolean isActive;
+    private Long vehicleTypeId;
+    private String vehicleType;
+    private Double hourlyRate;
+    private Boolean isAvailable;
     
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createdAt;
+    
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime updatedAt;
 }

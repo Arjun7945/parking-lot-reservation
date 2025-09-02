@@ -5,39 +5,45 @@ import java.time.LocalDateTime;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import jakarta.persistence.Version;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
 @Entity
 @Table(name = "reservations")
-public class Reservation {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+@Getter
+@Setter
+public class Reservation extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "slot_id", nullable = false)
-    private com.testproject.parking_lot_reservation.entity.Slot slot;
-
+    private Slot slot;
+    
     @Column(nullable = false)
     private String vehicleNumber;
-
+    
     @Column(nullable = false)
     private LocalDateTime startTime;
-
+    
     @Column(nullable = false)
     private LocalDateTime endTime;
-
+    
     @Column(nullable = false)
-    private Double cost;
-
-    @Version
-    private Long version;
+    private Double totalCost;
+    
+    @Column(nullable = false)
+    private Boolean isActive = true;
+    
+    @Column(nullable = false)
+    private Integer durationHours;
+    
+    // Add this method to help with JSON serialization
+    public Boolean getIsActive() {
+        return isActive;
+    }
+    
+    public void setIsActive(Boolean isActive) {
+        this.isActive = isActive;
+    }
 }
