@@ -74,7 +74,6 @@ public class ReservationServiceImpl implements ReservationService {
     
     @Override
     public ReservationResponseDTO getReservationById(Long id) {
-        // Change to find by ID regardless of active status
         Reservation reservation = reservationRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Reservation not found with id: " + id));
         return convertToDTO(reservation);
@@ -105,7 +104,6 @@ public class ReservationServiceImpl implements ReservationService {
                 .collect(Collectors.toList());
     }
     
-    // Add method to get all reservations (including cancelled)
     public List<ReservationResponseDTO> getAllReservations() {
         return reservationRepository.findAll().stream()
                 .map(this::convertToDTO)

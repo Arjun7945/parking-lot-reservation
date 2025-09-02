@@ -26,11 +26,9 @@ public interface ReservationRepository extends JpaRepository<Reservation, Long> 
     List<Reservation> findVehicleReservations(@Param("vehicleNumber") String vehicleNumber,
                                             @Param("startTime") LocalDateTime startTime,
                                             @Param("endTime") LocalDateTime endTime);
-    
-    // Change this to find both active and inactive reservations
+
     Optional<Reservation> findByIdAndIsActiveTrue(Long id);
-    
-    // Add this method to find reservation by ID regardless of active status
+
     Optional<Reservation> findById(Long id);
     
     @Query("SELECT s FROM Slot s WHERE s.id NOT IN (" +

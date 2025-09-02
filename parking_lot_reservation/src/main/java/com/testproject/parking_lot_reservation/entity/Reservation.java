@@ -38,7 +38,6 @@ public class Reservation extends BaseEntity {
     @Column(nullable = false)
     private Integer durationHours;
     
-    // Add this method to help with JSON serialization
     public Boolean getIsActive() {
         return isActive;
     }

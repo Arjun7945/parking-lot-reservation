@@ -11,6 +11,5 @@ public interface ReservationService {
     void cancelReservation(Long id);
     List<ReservationResponseDTO> getAllActiveReservations();
     
-    // Add method to get all reservations
     List<ReservationResponseDTO> getAllReservations();
 }
