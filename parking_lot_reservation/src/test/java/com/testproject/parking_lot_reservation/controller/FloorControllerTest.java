@@ -78,7 +78,7 @@ class FloorControllerTest {
 
     @Test
     void createFloor_InvalidRequest_ReturnsBadRequest() throws Exception {
-        floorRequestDTO.setFloorNumber(null); // Invalid
+        floorRequestDTO.setFloorNumber(null);
 
         mockMvc.perform(post("/api/floors")
                 .contentType(MediaType.APPLICATION_JSON)

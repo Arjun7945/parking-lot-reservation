@@ -83,7 +83,7 @@ class ReservationControllerTest {
 
     @Test
     void createReservation_InvalidRequest_ReturnsBadRequest() throws Exception {
-        reservationRequestDTO.setVehicleNumber("INVALID"); // Invalid format
+        reservationRequestDTO.setVehicleNumber("INVALID");
 
         mockMvc.perform(post("/api/reservations")
                 .contentType(MediaType.APPLICATION_JSON)

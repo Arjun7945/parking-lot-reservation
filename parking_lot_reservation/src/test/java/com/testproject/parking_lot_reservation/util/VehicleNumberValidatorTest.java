@@ -36,26 +36,26 @@ class VehicleNumberValidatorTest {
 
     @ParameterizedTest
     @ValueSource(strings = {
-        "INVALID",              // Too short
-        "KA01AB12345",          // Too long (11 characters)
-        "KAA1AB1234",           // Extra character in first part (should be 2 letters, 2 numbers)
-        "KA01AB123",            // Missing digit in last part (should be 4 digits)
-        "KA01AB123A",           // Letter in number part
-        "1234AB5678",           // Numbers instead of letters at start
-        "KA01AB12 34",          // Contains space
-        "KA01-AB1234",          // Contains hyphen
-        "ka01ab1234",           // Lowercase letters
-        "KA01AB123",            // Only 3 digits at end
-        "K1AB1234",             // Missing digits (should be 2 letters, 2 numbers)
-        "KA0AB1234",            // Missing digit (should be 2 numbers)
-        "KAA1B1234",            // Wrong format
-        "KA01A1B234",           // Wrong format
-        "KA01@B1234",           // Special character
-        "KA01AB#234",           // Special character
-        "KA01AB12$4",           // Special character
-        "KA 01AB1234",          // Contains space
-        "KA01 AB1234",          // Contains space
-        "KA01AB 1234"           // Contains space
+        "INVALID",             
+        "KA01AB12345",     
+        "KAA1AB1234",           
+        "KA01AB123",          
+        "KA01AB123A",       
+        "1234AB5678",       
+        "KA01AB12 34",    
+        "KA01-AB1234",     
+        "ka01ab1234",         
+        "KA01AB123",           
+        "K1AB1234",             
+        "KA0AB1234",            
+        "KAA1B1234",            
+        "KA01A1B234",         
+        "KA01@B1234",           
+        "KA01AB#234",          
+        "KA01AB12$4",           
+        "KA 01AB1234",         
+        "KA01 AB1234",         
+        "KA01AB 1234"           
     })
     void isValid_InvalidVehicleNumber_ReturnsFalse(String invalidNumber) {
         assertFalse(VehicleNumberValidator.isValid(invalidNumber));
@@ -63,9 +63,9 @@ class VehicleNumberValidatorTest {
 
     @Test
     void isValid_BoundaryCases_ReturnsExpectedResults() {
-        assertTrue(VehicleNumberValidator.isValid("KA01A1234"));    // 9 characters - valid
-        assertTrue(VehicleNumberValidator.isValid("KA01AB1234"));   // 10 characters - valid
-        assertFalse(VehicleNumberValidator.isValid("KA01A123"));    // 8 characters - invalid
-        assertFalse(VehicleNumberValidator.isValid("KA01AB12345")); // 11 characters - invalid
+        assertTrue(VehicleNumberValidator.isValid("KA01A1234"));  
+        assertTrue(VehicleNumberValidator.isValid("KA01AB1234"));
+        assertFalse(VehicleNumberValidator.isValid("KA01A123"));   
+        assertFalse(VehicleNumberValidator.isValid("KA01AB12345")); 
     }
 }

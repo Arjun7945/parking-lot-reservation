@@ -81,7 +81,7 @@ class SlotControllerTest {
 
     @Test
     void createSlot_InvalidRequest_ReturnsBadRequest() throws Exception {
-        slotRequestDTO.setSlotNumber(null); // Invalid
+        slotRequestDTO.setSlotNumber(null);
 
         mockMvc.perform(post("/api/slots")
                 .contentType(MediaType.APPLICATION_JSON)

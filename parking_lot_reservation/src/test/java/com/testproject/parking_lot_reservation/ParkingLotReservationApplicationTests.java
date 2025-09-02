@@ -9,7 +9,5 @@ import org.springframework.test.context.TestPropertySource;
 class ParkingLotReservationApplicationTests {
 
     @Test
-    void contextLoads() {
-        // This test will pass if the application context loads successfully
-    }
+    void contextLoads() {}
 }
